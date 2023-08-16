@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { StrictMode } from "react";
 
-import App from "./app.js";
+import App from "./app.jsx";
 
 class Main extends React.Component {
   render() {

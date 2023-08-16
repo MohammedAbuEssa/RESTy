@@ -2,12 +2,11 @@ $backgroundColor: #efefef;
 $radius: 40%;
 
 form {
-  display: inline-block;
-  margin: auto;
+  display: flex;
   width: 200px;
-
+  flex-wrap: wrap;
   label {
-    display: flex;
+    // display: flex;
     margin: 1rem 0;
 
     &.methods {
@@ -18,9 +17,18 @@ form {
         background: #ccc;
 
         &:hover, &.active {
-          background: #fff;
+          background:  rgb(255, 108, 55);
+          color: white;
         }
       }
     }
   }
+}
+
+.Results-section{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
