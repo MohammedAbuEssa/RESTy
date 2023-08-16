@@ -2,10 +2,10 @@ $backgroundColor: #efefef;
 $radius: 40%;
 
 form {
-  display: inline-block;
+  display: flex;
   margin: auto;
   width: 200px;
-
+flex-direction: row;
   label {
     display: flex;
     margin: 1rem 0;
@@ -19,8 +19,14 @@ form {
 
         &:hover, &.active {
           background: #fff;
+          cursor: pointer;
         }
       }
     }
   }
+}
+
+.url-span{
+  padding-right: 10px;
+  
 }
