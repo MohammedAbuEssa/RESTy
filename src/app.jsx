@@ -1,4 +1,4 @@
-import React , {useState}from 'react';
+import React , {useState,useEffect}from 'react';
 
 import './app.scss';
 
@@ -8,24 +8,24 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
+import axios from 'axios';
 
 const App = () => {
   const [data, setData] = useState(null);
   const [requestParams, setRequestParams] = useState({});
 
+
   const callApi = (requestParams) => {
-    // mock output
-    const responseData = {
-      count: 2,
-      results: [
-        { name: 'fake thing 1', url: 'http://fakethings.com/1' },
-        { name: 'fake thing 2', url: 'http://fakethings.com/2' },
-      ],
-    };
-    setData(responseData);
+    axios.get(requestParams.url)
+      .then(response => setData(response.data))
+      .catch(error => console.error('Error fetching data:', error));
+
     setRequestParams(requestParams);
   };
-
+  useEffect(() => {
+    console.log("Data is changing");
+}, [data,requestParams])
+  
   return (
     <>
       <Header />

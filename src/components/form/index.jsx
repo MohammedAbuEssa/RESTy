@@ -1,23 +1,28 @@
 "use strict";
-import React from "react";
+import React,{useState} from "react";
 import "./form.scss";
 
 function Form(props) {
+  const [url, setUrl] = useState("");
+    function handaleUrlChange(e) {
+      setUrl(e.target.value);
+    }
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
       method: "GET",
-      url: "https://pokeapi.co/api/v2/pokemon",
+      url: url,
     };
     props.handleApiCall(formData);
   };
-
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label>
           <span className="url-span">URL: </span>
-          <input name="url" type="text" />
+          <input name="url" type="text" 
+          value={url}
+          onChange={handaleUrlChange}/>
           <button type="submit">GO!</button>
         </label>
         <label className="methods">
