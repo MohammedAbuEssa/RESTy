@@ -79,6 +79,8 @@ const App = () => {
       <History history={state.history} onSelectHistory={selectHistory} />
       <Results data={state.data} />
       <Footer />
+
+      
     </>
   );
 };
